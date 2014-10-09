@@ -1,0 +1,60 @@
+{
+  "db": {
+    "connectionString": "postgres://voicemail:password@localhost/voicemail",
+    "provider": "postgres"
+  },
+
+  "ari": {
+    "url": "http://ari.js:8088",
+    "username": "user",
+    "password": "secret",
+    "applicationName": "voicemail"
+  },
+
+  "prompts": {
+    "mailboxWriter": {
+      "greeting": [{
+        "sound": "sound:vm-theperson",
+        "skipable": false,
+        "postSilence": 0
+      }, {
+        "sound": "characters:{extension}",
+        "skipable": false,
+        "postSilence": 0
+      }, {
+        "sound": "sound:{status}",
+        "skipable": false,
+        "postSilence": 1
+      }],
+
+      "intro": [{
+        "sound": "sound:vm-intro",
+        "skipable": true,
+        "postSilence": 1
+      }, {
+        "sound": "sound:beep",
+        "skipable": false,
+        "postSilence": 0
+      }],
+
+      "goodbye": [{
+        "sound": "sound:vm-goodbye",
+        "skipable": false,
+        "postSilence": 0
+      }]
+    }
+  },
+
+  "inputs": {
+    "mailboxWriter": {
+      "ready": {
+        "#": "stop"
+      }
+    }
+  },
+
+  "mailbox": {
+    "msg_format": "wav",
+    "min_sec": "10"
+  }
+}

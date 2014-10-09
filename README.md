@@ -20,6 +20,20 @@ or add the following the your package.json file
 
 # Usage
 
+Load as a module:
+
+```JavaScript
+var voicemail = require('voicemail');
+
+voicemail.create();
+```
+
+or run it as an application:
+
+```bash
+$ node app.js
+```
+
 # Development
 
 After cloning the git repository, run the following to install the module and all dev dependencies:

@@ -1,0 +1,37 @@
+{
+  "name": "voicemail",
+  "version": "0.1.0",
+  "description": "Asterisk voicemail application.",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asterisk/node-voicemail"
+  },
+  "author": "Samuel Fortier-Galarneau",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/asterisk/node-voicemail/issues"
+  },
+  "homepage": "https://github.com/asterisk/node-voicemail",
+  "dependencies": {
+    "ari-client-wrapper": "^0.1.2",
+    "voicemail-auth": "git://github.com/asterisk/node-voicemail-auth",
+    "voicemail-config": "git://github.com/asterisk/node-voicemail-config",
+    "voicemail-data": "git://github.com/asterisk/node-voicemail-data",
+    "voicemail-fsm": "git://github.com/asterisk/node-voicemail-fsm",
+    "voicemail-mailbox": "git://github.com/asterisk/node-voicemail-mailbox",
+    "voicemail-prompt": "git://github.com/asterisk/node-voicemail-prompt"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-mocha-test": "^0.10.0",
+    "mocha": "^1.21.4",
+    "mockery": "^1.4.0",
+    "q": "^1.0.1"
+  }
+}
