@@ -15,15 +15,15 @@
     "mailboxWriter": {
       "greeting": [{
         "sound": "sound:vm-theperson",
-        "skipable": false,
+        "skipable": true,
         "postSilence": 0
       }, {
         "sound": "characters:{extension}",
-        "skipable": false,
+        "skipable": true,
         "postSilence": 0
       }, {
         "sound": "sound:{status}",
-        "skipable": false,
+        "skipable": true,
         "postSilence": 1
       }],
 
@@ -58,3 +58,4 @@
     "min_sec": "10"
   }
 }
+

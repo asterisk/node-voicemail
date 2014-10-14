@@ -24,6 +24,7 @@
     "voicemail-data": "git://github.com/asterisk/node-voicemail-data",
     "voicemail-fsm": "git://github.com/asterisk/node-voicemail-fsm",
     "voicemail-mailbox": "git://github.com/asterisk/node-voicemail-mailbox",
+    "voicemail-notify": "git://github.com/asterisk/node-voicemail-notify",
     "voicemail-prompt": "git://github.com/asterisk/node-voicemail-prompt"
   },
   "devDependencies": {
