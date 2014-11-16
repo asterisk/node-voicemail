@@ -19,6 +19,8 @@
   "homepage": "https://github.com/asterisk/node-voicemail",
   "dependencies": {
     "ari-client-wrapper": "^0.1.2",
+    "grunt-mocha-istanbul": "^2.2.0",
+    "istanbul": "^0.3.2",
     "voicemail-auth": "git://github.com/asterisk/node-voicemail-auth",
     "voicemail-config": "git://github.com/asterisk/node-voicemail-config",
     "voicemail-data": "git://github.com/asterisk/node-voicemail-data",

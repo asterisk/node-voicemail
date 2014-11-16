@@ -51,6 +51,14 @@ $ grunt
 
 jshint will enforce a minimal style guide. It is also a good idea to create unit tests when adding new features.
 
+To generate a test coverage report run the following:
+
+```bash
+$ grunt coverage
+```
+
+This will also ensure a coverage threshold is met by the tests.
+
 # License
 
 Apache, Version 2.0. Copyright (c) 2014, Digium, Inc. All rights reserved.
