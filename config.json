@@ -11,6 +11,20 @@
     "applicationName": "voicemail"
   },
 
+  "logging": {
+    "src": false,
+
+    "normal": {
+      "level": "info",
+      "path": "./logs/info.log"
+    },
+
+    "error": {
+      "level": "error",
+      "path": "./logs/error.log"
+    }
+  },
+
   "prompts": {
     "mailboxWriter": {
       "greeting": [{

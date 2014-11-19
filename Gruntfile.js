@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 
   // threshold for failing coverage
   var coverageThreshold = 80;
+  var functionThreshold = 60;
 
   // Project configuration.
   grunt.initConfig({
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
             lines: coverageThreshold,
             statements: coverageThreshold,
             branches: coverageThreshold,
-            functions: coverageThreshold
+            functions: functionThreshold
           }
         }
       }

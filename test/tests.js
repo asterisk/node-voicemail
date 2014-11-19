@@ -95,7 +95,21 @@ describe('voicemail', function() {
         return deferred.promise;
       }
     };
+    var loggingMock = {
+      create: function() {
+        return {
+          trace: function() {},
+          debug: function() {},
+          info: function() {},
+          warn: function() {},
+          error: function() {},
+          fatal: function() {}
+        };
+      }
+    };
+
     mockery.registerMock('ari-client-wrapper', clientMock);
+    mockery.registerMock('voicemail-logging', loggingMock);
     mockery.registerMock('voicemail-fsm', getMockFsm());
 
     done();
