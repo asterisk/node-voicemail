@@ -1,6 +1,6 @@
 {
   "name": "voicemail",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Asterisk voicemail application.",
   "main": "app.js",
   "private": true,
