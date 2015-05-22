@@ -1,4 +1,8 @@
 {
+  "app": {
+    "maxRestarts": 10
+  },
+
   "db": {
     "connectionString": "postgres://voicemail:password@localhost/voicemail",
     "provider": "postgres"
@@ -72,4 +76,3 @@
     "min_sec": "10"
   }
 }
-

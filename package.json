@@ -2,7 +2,7 @@
   "name": "voicemail",
   "version": "0.1.3",
   "description": "Asterisk voicemail application.",
-  "main": "app.js",
+  "main": "lib/voicemail.js",
   "private": true,
   "scripts": {
     "test": "mocha --reporter spec"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/asterisk/node-voicemail",
   "dependencies": {
     "ari-client-wrapper": "^0.1.2",
+    "forever-monitor": "^1.5.2",
     "voicemail-auth": "git://github.com/asterisk/node-voicemail-auth",
     "voicemail-config": "git://github.com/asterisk/node-voicemail-config",
     "voicemail-data": "git://github.com/asterisk/node-voicemail-data",
@@ -31,11 +32,12 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
+    "grunt-mocha-istanbul": "^2.2.0",
     "grunt-mocha-test": "^0.10.0",
+    "istanbul": "^0.3.2",
     "mocha": "^1.21.4",
     "mockery": "^1.4.0",
-    "q": "^1.0.1",
-    "grunt-mocha-istanbul": "^2.2.0",
-    "istanbul": "^0.3.2"
+    "process-watch": "^0.3.1",
+    "q": "^1.0.1"
   }
 }
