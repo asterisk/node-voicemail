@@ -14,11 +14,15 @@
 
 'use strict';
 
-var assert = require('assert');
-var mockery = require('mockery');
-var Q = require('q');
 var util = require('util');
 var Emitter = require('events').EventEmitter;
+var assert = require('assert');
+
+var mockery = require('mockery');
+var Q = require('q');
+var pw = require('process-watch');
+
+var config = require('../config.json');
 
 var mockClient;
 // milliseconds to delay async ops for mock requests
@@ -30,6 +34,8 @@ var mockeryOpts = {
 };
 // used to track whether fsm was created after StasisStart event
 var fsmCreated = false;
+// last logged error
+var lastError;
 
 /**
  * Returns a mock client that to allow a single EventEmitter to be
@@ -95,6 +101,7 @@ describe('voicemail', function() {
         return deferred.promise;
       }
     };
+
     var loggingMock = {
       create: function() {
         return {
@@ -102,7 +109,9 @@ describe('voicemail', function() {
           debug: function() {},
           info: function() {},
           warn: function() {},
-          error: function() {},
+          error: function(err) {
+            lastError = err;
+          },
           fatal: function() {},
           child: function() {
             return this;
@@ -121,11 +130,13 @@ describe('voicemail', function() {
   afterEach(function(done) {
     mockery.disable();
     fsmCreated = false;
+    lastError = undefined;
 
     done();
   });
 
   it('should configure StasisStart handler', function(done) {
+
     var voicemail = require('../lib/voicemail.js');
 
     voicemail.create();
@@ -141,6 +152,31 @@ describe('voicemail', function() {
           checkSuccess();
         }
       }, asyncDelay);
+    }
+  });
+
+  it('should restart up to maxRestarts', function(done) {
+
+    require('../start.js');
+
+    var watched = pw.watch('node app.js', process.pid)
+      .started(kill)
+      .restarted(kill)
+      .error(done)
+      .start();
+
+    checkSuccess();
+
+    function kill() {
+      watched.kill();
+    }
+
+    function checkSuccess() {
+      if (lastError === 'app.js has exited after reaching max restarts') {
+        done();
+      } else {
+        setTimeout(checkSuccess, asyncDelay);
+      }
     }
   });
 

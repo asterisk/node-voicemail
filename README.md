@@ -31,7 +31,7 @@ voicemail.create();
 or run it as an application:
 
 ```bash
-$ node app.js
+$ node start.js
 ```
 
 # Development
@@ -62,4 +62,3 @@ This will also ensure a coverage threshold is met by the tests.
 # License
 
 Apache, Version 2.0. Copyright (c) 2014, Digium, Inc. All rights reserved.
-
